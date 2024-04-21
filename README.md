@@ -73,7 +73,7 @@ Credits:
 ![image](https://github.com/Naresh-Dhimal/Air_Quality_Bucket_Classification/assets/122601911/b0527b45-db60-4b54-b44f-37137fa9ca43)
 
 # Data Preparation and Feature Engineering
-1. Handling missing values.
+1. Handling missing values.<br>
  a. handling missing values of PM2.5
 ```
 def fill_pm_2_5(df):
@@ -140,6 +140,47 @@ clean_dataset['Xylene']=clean_dataset['Xylene'].fillna((clean_dataset['Xylene'].
 ```
 city = pd.get_dummies(clean_dataset["City"], dtype=float)
 ```
+5. Outlier Detection.<br>
+a. Outlier visualization of PM10 using boxplot.
+
+![image](https://github.com/Naresh-Dhimal/Air_Quality_Bucket_Classification/assets/122601911/939ea9b4-c987-4ddb-bfaa-aa48539e6ae0)
+
+b. Removing Outlier.
+```
+def get_iqr(features):
+    # calculating q1
+    q1 = np.percentile(features, 25)
+
+    # calculating q3
+    q3 = np.percentile(features, 75 )
+
+    # caluculating IQR value
+    iqr_value = q3 - q1
+
+    # calculating the lower and upper fence
+    lower_fence = q1 - 1.5 * iqr_value
+    upper_fence = q3 + 1.5 * iqr_value
+
+    # returning the lower and upper fence
+    return lower_fence, upper_fence
+def replace_outliers(data, features):
+    
+    # Iterate over each feature
+    for feature in features:
+        # Calculate the lower and upper bounds of the interquartile range (IQR)
+        lower, upper = get_iqr(data[feature])
+        # Define the condition for outliers
+        outlier_condition = (data[feature] < lower) | (data[feature] > upper)
+        # Replace outliers with the median value of the feature
+        data.loc[outlier_condition, feature] = data[feature].median()
+    
+    return data
+features =['PM2.5', 'PM10', 'NO', 'NO2', 'NOx', 'NH3', 'CO', 'SO2', 'O3',
+       'Benzene', 'Toluene', 'Xylene', 'AQI']
+data_without_outlier =  replace_outliers(df, features)
+```
+
+
 
 
 
