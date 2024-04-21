@@ -11,13 +11,13 @@ Utilizing an AQI dataset from Kaggle, I applied a ***decision tree classifier***
 
 # Dataset Reference: [Kaggle](https://www.kaggle.com/datasets/amandeepvasistha/air-quality-data)
 # About Dataset:
-<b>Context</b>
+<b>Context:</b>
 Air Quality plays a significant factor in maintaining the health of an individual. Hence, monitoring the Air Quality by measuring and documenting the concentration levels of different pollutants is important.
 
-<b>Source</b>
+<b>Source:</b>
 The dataset have been derived from Central Pollution Control Board of India: : https://cpcb.nic.in/
 
-<b>Inspiration</b>
+<b>Inspiration:</b>
 This dataset aims to document the pollutant concentration levels in different cities of India at different dates and time during the period of 2015 - 2020. The pollutant concentration levels can be utilized to determine Air Quality Index and conclude on the air quality of India throughout the period. The dataset is aimed to be updated annually with up-to-date values and credible information.
 
 Libraries used:
@@ -179,7 +179,29 @@ features =['PM2.5', 'PM10', 'NO', 'NO2', 'NOx', 'NH3', 'CO', 'SO2', 'O3',
        'Benzene', 'Toluene', 'Xylene', 'AQI']
 data_without_outlier =  replace_outliers(df, features)
 ```
+# Classification model used: Logistic Regression, Decision tree
+1. Features Selection for classification.
+```
+X = train_dataset
+y = train_data["AQI_Bucket"]
+```
+2. Train Test Split.
+```
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+```
+3. Modeling.<br>
+a. Logistic Regression. <br>
+Using logistic regression for classification, classification report for validation data:
 
+![image](https://github.com/Naresh-Dhimal/Air_Quality_Bucket_Classification/assets/122601911/349f1ddd-0257-4ce7-862f-01a8e79defb6)
+
+b. Decision Tree.<br>
+Using decision tree for classification, classification report for validation data:
+
+![image](https://github.com/Naresh-Dhimal/Air_Quality_Bucket_Classification/assets/122601911/333f6bbf-117e-4ad2-91ca-50d9de4cbecf)
+
+
+### Hyperparameter tunnig take huge time to execute with this dateset of 650000 enteris. Between Logistic Regression and Decision Tree, decision tree stats seems to be better so i prefer Decision tree to create model to deploy for now.
 
 
 
