@@ -32,45 +32,45 @@ Libraries used:
 # Data Profiling and Inspection
 1. Overall Information of dataset.
 
-![image](https://github.com/Naresh-Dhimal/Air_Quality_Bucket_Classification/assets/122601911/af9184eb-a18a-47f0-9244-5a1af53e19c1)
+![Overall Information of dataset.](https://github.com/Naresh-Dhimal/Air_Quality_Bucket_Classification/assets/122601911/af9184eb-a18a-47f0-9244-5a1af53e19c1)
 
 2. Missing Values Analysis.
 
-![image](https://github.com/Naresh-Dhimal/Air_Quality_Bucket_Classification/assets/122601911/fdebc015-319a-4b39-87db-8b6350e6079e)
+![Missing Values Analysis.](https://github.com/Naresh-Dhimal/Air_Quality_Bucket_Classification/assets/122601911/fdebc015-319a-4b39-87db-8b6350e6079e)
 
 3. Statistical Overview.
 
-![image](https://github.com/Naresh-Dhimal/Air_Quality_Bucket_Classification/assets/122601911/12a9fd5a-0079-426f-815c-b006b6b307e4)
+![Statistical Overview.](https://github.com/Naresh-Dhimal/Air_Quality_Bucket_Classification/assets/122601911/12a9fd5a-0079-426f-815c-b006b6b307e4)
 
 4. Correlation Analysis.
 
-![image](https://github.com/Naresh-Dhimal/Air_Quality_Bucket_Classification/assets/122601911/ffc32ac1-e342-4bab-9800-89f3a218b678)
+![Correlation Analysis.](https://github.com/Naresh-Dhimal/Air_Quality_Bucket_Classification/assets/122601911/ffc32ac1-e342-4bab-9800-89f3a218b678)
 
 # Some Exploratory Data Analysis:
 
 1. AQI_Bucket chart.
 
-![image](https://github.com/Naresh-Dhimal/Air_Quality_Bucket_Classification/assets/122601911/0c55f302-8c52-4287-a06d-fab558317ed7)
+![AQI_Bucket chart.](https://github.com/Naresh-Dhimal/Air_Quality_Bucket_Classification/assets/122601911/0c55f302-8c52-4287-a06d-fab558317ed7)
 
 2. Distribution of PM2.5 and PM10 with respect to AQI_Bucket.
 
-![image](https://github.com/Naresh-Dhimal/Air_Quality_Bucket_Classification/assets/122601911/1ec1d5c6-1c8d-4c0a-a985-ce86251c1532)
+![Distribution of PM2.5 and PM10 with respect to AQI_Bucket.](https://github.com/Naresh-Dhimal/Air_Quality_Bucket_Classification/assets/122601911/1ec1d5c6-1c8d-4c0a-a985-ce86251c1532)
 
 3. Distribution of NO2 and NO with respect to AQI_Bucket.
 
-![image](https://github.com/Naresh-Dhimal/Air_Quality_Bucket_Classification/assets/122601911/2749b5e2-7b2c-466a-89a3-1faa79546294)
+![Distribution of NO2 and NO with respect to AQI_Bucket.](https://github.com/Naresh-Dhimal/Air_Quality_Bucket_Classification/assets/122601911/2749b5e2-7b2c-466a-89a3-1faa79546294)
 
 4. Distribution of O3 with AQI_Bucket.
 
-![image](https://github.com/Naresh-Dhimal/Air_Quality_Bucket_Classification/assets/122601911/00fb93d1-d648-468d-8fce-ef8027956faf)
+![Distribution of O3 with AQI_Bucket.](https://github.com/Naresh-Dhimal/Air_Quality_Bucket_Classification/assets/122601911/00fb93d1-d648-468d-8fce-ef8027956faf)
 
 5. Yearly Analysis.<br>
 Credits:
 [PARUL PANDEY](https://www.kaggle.com/parulpandey/breathe-india-covid-19-effect-on-pollution)
 
-![image](https://github.com/Naresh-Dhimal/Air_Quality_Bucket_Classification/assets/122601911/49a50df1-d52c-492e-892a-3c3beaf42fc8)
-![image](https://github.com/Naresh-Dhimal/Air_Quality_Bucket_Classification/assets/122601911/775582dd-5653-4b20-bbb1-820f118af5ac)
-![image](https://github.com/Naresh-Dhimal/Air_Quality_Bucket_Classification/assets/122601911/b0527b45-db60-4b54-b44f-37137fa9ca43)
+![](https://github.com/Naresh-Dhimal/Air_Quality_Bucket_Classification/assets/122601911/49a50df1-d52c-492e-892a-3c3beaf42fc8)
+![](https://github.com/Naresh-Dhimal/Air_Quality_Bucket_Classification/assets/122601911/775582dd-5653-4b20-bbb1-820f118af5ac)
+![Yearly Analysis.](https://github.com/Naresh-Dhimal/Air_Quality_Bucket_Classification/assets/122601911/b0527b45-db60-4b54-b44f-37137fa9ca43)
 
 # Data Preparation and Feature Engineering
 1. Handling missing values.<br>
@@ -143,7 +143,7 @@ city = pd.get_dummies(clean_dataset["City"], dtype=float)
 5. Outlier Detection.<br>
 a. Outlier visualization of PM10 using boxplot.
 
-![image](https://github.com/Naresh-Dhimal/Air_Quality_Bucket_Classification/assets/122601911/939ea9b4-c987-4ddb-bfaa-aa48539e6ae0)
+![Outlier visualization of PM10 using boxplot.](https://github.com/Naresh-Dhimal/Air_Quality_Bucket_Classification/assets/122601911/939ea9b4-c987-4ddb-bfaa-aa48539e6ae0)
 
 b. Removing Outlier.
 ```
@@ -193,17 +193,25 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 a. Logistic Regression. <br>
 Using logistic regression for classification, classification report for validation data:
 
-![image](https://github.com/Naresh-Dhimal/Air_Quality_Bucket_Classification/assets/122601911/349f1ddd-0257-4ce7-862f-01a8e79defb6)
+![Classification report of logistic regression.](https://github.com/Naresh-Dhimal/Air_Quality_Bucket_Classification/assets/122601911/349f1ddd-0257-4ce7-862f-01a8e79defb6)
 
 b. Decision Tree.<br>
 Using decision tree for classification, classification report for validation data:
 
-![image](https://github.com/Naresh-Dhimal/Air_Quality_Bucket_Classification/assets/122601911/333f6bbf-117e-4ad2-91ca-50d9de4cbecf)
+![Classification report of decision tree.](https://github.com/Naresh-Dhimal/Air_Quality_Bucket_Classification/assets/122601911/333f6bbf-117e-4ad2-91ca-50d9de4cbecf)
 
 
 ### Hyperparameter tunnig take huge time to execute with this dateset of 650000 enteris. Between Logistic Regression and Decision Tree, decision tree stats seems to be better so i prefer Decision tree to create model to deploy for now.
 
+# We want to serialize model.
+```
+import pickle
+with open("classification_model.pickle","wb") as file:
+    pickle.dump(dtc_model, file)
+```
+# Deserialization.
 
+![Deserialization](https://github.com/Naresh-Dhimal/Air_Quality_Bucket_Classification/assets/122601911/3790a1ae-95c0-4029-8474-479fa3cb7782)
 
 
 
